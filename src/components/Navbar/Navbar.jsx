@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavContainer, NavMenu } from "./NavbarStyled";
+import { NavContainer, NavMenu, Hamburger } from "./NavbarStyled";
 import { Outlet } from "react-router-dom";
 
 export function Navbar() {
@@ -7,14 +7,13 @@ export function Navbar() {
   const [horas, setHoras] = useState(0);
   const [min, setMin] = useState(0);
   const [seg, setSeg] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  // Lista de datas no formato "dd-mm-yyyy"
   const datasEventos = ["23-08-2025", "04-10-2025"];
 
   useEffect(() => {
     function handleDate() {
       const agora = new Date();
-
       const proximasDatas = datasEventos
         .map((str) => {
           const [dia, mes, ano] = str.split("-");
@@ -24,7 +23,6 @@ export function Navbar() {
         .sort((a, b) => a - b);
 
       const proxima = proximasDatas[0];
-
       if (!proxima) return;
 
       const intervalo = setInterval(() => {
@@ -41,15 +39,10 @@ export function Navbar() {
         }
 
         const totalSegundos = Math.floor(diff / 1000);
-        const dias = Math.floor(totalSegundos / (3600 * 24));
-        const horas = Math.floor((totalSegundos % (3600 * 24)) / 3600);
-        const minutos = Math.floor((totalSegundos % 3600) / 60);
-        const segundos = totalSegundos % 60;
-
-        setDias(dias);
-        setHoras(horas);
-        setMin(minutos);
-        setSeg(segundos);
+        setDias(Math.floor(totalSegundos / (3600 * 24)));
+        setHoras(Math.floor((totalSegundos % (3600 * 24)) / 3600));
+        setMin(Math.floor((totalSegundos % 3600) / 60));
+        setSeg(totalSegundos % 60);
       }, 1000);
 
       return () => clearInterval(intervalo);
@@ -64,6 +57,7 @@ export function Navbar() {
         <button>
           <img src="/logo.png" alt="Área 48" />
         </button>
+
         <div className="relogio">
           <div className="relogio-text">
             <h3>FALTAM</h3>
@@ -89,7 +83,13 @@ export function Navbar() {
           </div>
         </div>
       </NavContainer>
-      <NavMenu>
+      <Hamburger onClick={() => setMenuOpen(!menuOpen)} open={menuOpen}>
+        <span />
+        <span />
+        <span />
+      </Hamburger>
+
+      <NavMenu open={menuOpen}>
         <div className="container">
           <div className="navmenu">
             <button>Ingressos</button>
@@ -98,11 +98,12 @@ export function Navbar() {
             <button>Contatos</button>
             <button>Novidades</button>
             <button>
-              <img src="/loja.svg" /> Loja
+              <img src="/loja.svg" alt="" /> Loja
             </button>
           </div>
         </div>
       </NavMenu>
+
       <Outlet />
     </>
   );

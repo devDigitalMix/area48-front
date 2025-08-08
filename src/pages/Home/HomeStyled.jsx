@@ -27,10 +27,16 @@ export const GuardaColunas = styled.section`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  gap: 15px;
   & > span {
     width: 2px;
     display: block;
     background-color: #00000049;
+  }
+  @media only screen and (max-width: 1000px) {
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
   }
 `;
 
@@ -163,6 +169,41 @@ export const HomeNoticias = styled.div`
           -webkit-line-clamp: 3; /* Número de linhas visíveis */
           -webkit-box-orient: vertical;
           overflow: hidden;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 790px) {
+    .mainNews {
+      .mainNoticia {
+        max-width: 230px;
+        & > h3 {
+          font-size: 26px;
+        }
+        .newsImage {
+          height: 162px;
+          max-width: 230px;
+          width: 100%;
+        }
+      }
+    }
+    .normalNews {
+      grid-template-columns: 1fr;
+      .noticia {
+        max-width: 400px;
+      }
+    }
+  }
+  @media only screen and (max-width: 530px) {
+    .mainNews {
+      flex-direction: column;
+      justify-content: start;
+      .mainNoticia {
+        max-width: 350px;
+        .newsImage {
+          height: 244px;
+          max-width: 350px;
+          width: 100%;
         }
       }
     }
