@@ -248,47 +248,61 @@ export const ModalUpdateNews = styled.form`
   }
 `;
 
-export const ListaEventos = styled.section`
-  display: flex;
-  gap: 10px;
-  flex-direction: column;
-  align-items: start;
-  justify-content: start;
-  max-width: 350px;
-  width: 100%;
+export const Patrocinadores = styled.section`
+  background: url(/patrocinadores-bg.webp) no-repeat center center;
+  background-size: cover;
+  padding: 50px 0;
+  h3 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--light);
+  }
   & > span {
-    margin-top: 10px;
     display: block;
-    width: 100%;
-    height: 2px;
-    background-color: #00000037;
+    background-color: var(--main);
+    width: 56px;
+    height: 4px;
+    margin: 10px auto 40px;
   }
-  & > p {
-    color: #181612d5;
+  p {
+    font-style: italic;
+    color: var(--light);
+    text-align: center;
+    margin-top: 60px;
   }
-  .eventos-title {
+`;
+export const Move = styled.div`
+  height: 80px;
+  background: url(/move.webp) repeat-x left center;
+  background-position: ${({ positionx }) =>
+    positionx ? `${positionx}px center` : "0 center"};
+`;
+
+// Base para todas as seções
+const SectionBase = styled.section`
+  background-size: cover;
+  padding: 100px 10px;
+
+  .ingressosHome {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .ingressosContent {
     display: grid;
-    gap: 10px;
-    .eventSelector {
-      display: flex;
-      gap: 10px;
-      button {
-        max-width: fit-content;
-        font-weight: 700;
-        color: #0000006a;
-        padding: 4px 10px;
-        box-shadow: 0 0 0 1px #d9090c65 inset;
-        &.active {
-          box-shadow: 0 0 10px 15px var(--main) inset;
-          color: var(--light);
-        }
-      }
-    }
-    h2 {
+    gap: 15px;
+    max-width: 510px;
+
+    h3 {
       font-size: 36px;
       font-weight: 700;
-      width: 100%;
       position: relative;
+      max-width: fit-content;
+      margin-bottom: 10px;
+
       &::after {
         display: block;
         content: "";
@@ -304,81 +318,99 @@ export const ListaEventos = styled.section`
         content: "";
         width: 56px;
         height: 4px;
-        background-color: var(--sec);
+        background-color: var(--main);
       }
-    }
-  }
-  .eventoContent {
-    position: relative;
-    max-width: fit-content;
-    height: fit-content;
-    .relogio {
-      position: absolute;
-      bottom: 0;
-      background-color: #000000c8;
-      border: 2px solid var(--sec);
-      padding: 15px 15px;
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      width: 100%;
-      backdrop-filter: blur(2px);
-      color: var(--light);
-      .relogio-text {
-        max-width: 130px;
-        h3 {
-          font-size: 24px;
-          font-weight: 900;
-          color: var(--main);
-        }
-      }
-      .relogio-times {
-        display: grid;
-        gap: 3px;
-        justify-items: start;
-        & > div {
-          display: flex;
-          gap: 15px;
-          h3 {
-            font-size: 40px;
-            font-weight: 600;
-            line-height: 0.8em;
-            span {
-              font-size: 20px;
-            }
-          }
-          div {
-            width: 100%;
-            h3 {
-              font-size: 16px;
-              font-weight: 600;
-            }
-          }
-        }
-      }
-    }
-  }
-  .eventoInfo {
-    display: grid;
-    gap: 6px;
-    h3 {
-      font-size: 24px;
-      font-weight: 700;
-    }
-    p {
-      color: #181612cf;
     }
 
-    ul {
-      display: grid;
-      gap: 13px;
-      li {
-        background-color: var(--sec);
+    p {
+      font-size: 24px;
+      line-height: 1.3em;
+
+      a {
+        color: #0044b7;
+        display: inline;
         font-weight: 700;
-        padding: 4px 12px;
-        max-width: fit-content;
-        color: var(--light);
+        text-decoration: underline;
+      }
+
+      i {
+        font-weight: 500;
       }
     }
+  }
+
+  @media only screen and (max-width: 940px) {
+    padding: 80px 10px;
+    .ingressosHome {
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+    }
+  }
+
+  @media only screen and (max-width: 430px) {
+    .btn {
+      font-size: 20px;
+      padding: 10px 15px;
+    }
+  }
+`;
+
+// Versões específicas
+export const IngressosHome = styled(SectionBase)`
+  background: url(/ingressos-bg.webp) no-repeat right center;
+  background-size: cover;
+  padding-bottom: 0;
+  @media only screen and (max-width: 800px) {
+    box-shadow: 0 0 400px 400px #ffffff89 inset;
+  }
+`;
+
+export const InscricoesHome = styled(SectionBase)`
+  background: url(/inscricoes-bg.webp) no-repeat left top;
+  background-size: cover;
+  .ingressosHome {
+    justify-content: end;
+  }
+  .ingressosContent {
+    gap: 20px;
+    h3 {
+      color: var(--light);
+    }
+    h4 {
+      margin-top: 10px;
+      color: #fefefed1;
+      position: relative;
+      top: 12px;
+    }
+    p {
+      color: #fefefed1;
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    box-shadow: 0 0 400px 400px #00000096 inset;
+  }
+`;
+
+export const CategoriasHome = styled(SectionBase)`
+  background: url(/categorias-bg.webp) no-repeat right center;
+  background-size: cover;
+
+  .ingressosContent {
+    gap: 20px;
+    h3 {
+      color: var(--dark);
+    }
+    p {
+      color: #181612d1;
+    }
+  }
+  .btn {
+    margin-top: 15px;
+  }
+
+  @media only screen and (max-width: 800px) {
+    box-shadow: 0 0 400px 400px #ffffff89 inset;
   }
 `;

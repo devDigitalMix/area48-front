@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavContainer, NavMenu, Hamburger } from "./NavbarStyled";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 
 export function Navbar() {
   const [dias, setDias] = useState(0);
@@ -8,6 +8,7 @@ export function Navbar() {
   const [min, setMin] = useState(0);
   const [seg, setSeg] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const datasEventos = ["23-08-2025", "04-10-2025"];
 
@@ -92,6 +93,7 @@ export function Navbar() {
       <NavMenu open={menuOpen}>
         <div className="container">
           <div className="navmenu">
+            <button onClick={() => navigate("/sobre")}>Sobre</button>
             <button>Ingressos</button>
             <button>Inscrições</button>
             <button>Categorias</button>

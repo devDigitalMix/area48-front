@@ -190,6 +190,39 @@ button,
 svg path {
   transition: 0.3s;
 }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.title {
+  font-size: 36px;
+      font-weight: 700;
+      position: relative;
+      max-width: fit-content;
+      margin-bottom: 10px;
+
+      &::after {
+        display: block;
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: #00000037;
+      }
+      &::before {
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        content: "";
+        width: 56px;
+        height: 4px;
+        background-color: var(--main);
+      }
+}
+
 #root {
  display: flex;
  flex-direction: column;

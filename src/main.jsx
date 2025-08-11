@@ -7,6 +7,7 @@ import { Navbar } from "./components/Navbar/Navbar.jsx";
 import Home from "./pages/Home/Home.jsx";
 import { GlobalStyled } from "./GlobalStyled.jsx";
 import UserProvider from "./Context/UserContent.jsx";
+import Sobre from "./pages/Sobre/Sobre.jsx";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/sobre",
+        element: <Sobre />,
       },
     ],
   },
