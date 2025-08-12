@@ -8,6 +8,8 @@ import Home from "./pages/Home/Home.jsx";
 import { GlobalStyled } from "./GlobalStyled.jsx";
 import UserProvider from "./Context/UserContent.jsx";
 import Sobre from "./pages/Sobre/Sobre.jsx";
+import { Categorias } from "./pages/Categorias/Categorias.jsx";
+import Novidades from "./pages/Novidades/Novidades.jsx";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,14 @@ const router = createBrowserRouter([
       {
         path: "/sobre",
         element: <Sobre />,
+      },
+      {
+        path: "/categorias",
+        element: <Categorias />,
+      },
+      {
+        path: "/novidades",
+        element: <Novidades />,
       },
     ],
   },

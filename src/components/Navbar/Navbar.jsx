@@ -96,9 +96,9 @@ export function Navbar() {
             <button onClick={() => navigate("/sobre")}>Sobre</button>
             <button>Ingressos</button>
             <button>Inscrições</button>
-            <button>Categorias</button>
+            <button onClick={() => navigate("/categorias")}>Categorias</button>
             <button>Contatos</button>
-            <button>Novidades</button>
+            <button onClick={() => navigate("/novidades")}>Novidades</button>
             <button>
               <img src="/loja.svg" alt="" /> Loja
             </button>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ListaEventos } from "../../components/ListaEventos/ListaEventos";
 import { GuardaColunas } from "../Home/HomeStyled";
 import {
@@ -7,9 +7,65 @@ import {
   SobreMain,
   SobrePilotos,
 } from "./SobreStyled";
+import { Footer } from "../../components/Footer/Footer";
 
 export default function Sobre() {
-  const [slide, setSlide] = useState("slide1");
+  const maxIndex = 5; // índice máximo do slide (0 a 5)
+
+  const [slideIndex, setSlideIndex] = useState(0);
+  const [slides, setSlides] = useState(["slide0", "slide1", "slide2"]);
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [slidesToShow, setSlidesToShow] = useState(3);
+
+  useEffect(() => {
+    // Atualiza slidesToShow com base na largura da tela
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+      if (window.innerWidth < 500) {
+        setSlidesToShow(1);
+      } else if (window.innerWidth < 730) {
+        setSlidesToShow(2);
+      } else {
+        setSlidesToShow(3);
+      }
+    }
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // chama na montagem para definir o valor inicial
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  function getSlidesFromIndex(startIndex, count) {
+    // Retorna 'count' slides a partir do startIndex, com loop
+    const result = [];
+    for (let i = 0; i < count; i++) {
+      let idx =
+        startIndex + i > maxIndex
+          ? startIndex + i - (maxIndex + 1)
+          : startIndex + i;
+      result.push(`slide${idx}`);
+    }
+    return result;
+  }
+
+  function nextSlide() {
+    const nextIndex = slideIndex + 1 > maxIndex ? 0 : slideIndex + 1;
+    setSlideIndex(nextIndex);
+    setSlides(getSlidesFromIndex(nextIndex, slidesToShow));
+  }
+
+  function prevSlide() {
+    const prevIndex = slideIndex - 1 < 0 ? maxIndex : slideIndex - 1;
+    setSlideIndex(prevIndex);
+    setSlides(getSlidesFromIndex(prevIndex, slidesToShow));
+  }
+
+  // Atualiza os slides se o slidesToShow mudar (ex: redimensionar a tela)
+  useEffect(() => {
+    setSlides(getSlidesFromIndex(slideIndex, slidesToShow));
+  }, [slidesToShow, slideIndex]);
 
   return (
     <SobreContainer>
@@ -38,33 +94,24 @@ export default function Sobre() {
             </p>
             <p>CONHEÇA OS PILOTOS</p>
             <div className="pilotosSlide">
-              <div
-                className={
-                  slide == "slide1" ? "slideContent active" : "slideContent"
-                }
-              >
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <div
-                className={
-                  slide == "slide2" ? "slideContent active" : "slideContent"
-                }
-              >
-                <span>s</span>
-                <span>s</span>
-                <span>s</span>
+              <div className="slideContent">
+                {[0, 1, 2, 3, 4, 5].map((i) => (
+                  <span
+                    key={i}
+                    className={slides.includes(`slide${i}`) ? "active" : ""}
+                  >
+                    {/* Aqui vai sua imagem depois */}
+                    {`Slide ${i + 1}`}
+                  </span>
+                ))}
               </div>
               <div className="slideBtns">
-                <button
-                  className={slide == "slide1" ? "active" : ""}
-                  onClick={() => setSlide("slide1")}
-                ></button>
-                <button
-                  className={slide == "slide2" ? "active" : ""}
-                  onClick={() => setSlide("slide2")}
-                ></button>
+                <button onClick={prevSlide}>
+                  <img src="/back.svg" alt="anterior" />
+                </button>
+                <button onClick={nextSlide}>
+                  <img src="/next.svg" alt="próximo" />
+                </button>
               </div>
             </div>
           </SobrePilotos>
@@ -72,6 +119,7 @@ export default function Sobre() {
         <span></span>
         <ListaEventos />
       </GuardaColunas>
+      <Footer />
     </SobreContainer>
   );
 }

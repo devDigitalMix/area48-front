@@ -27,13 +27,13 @@ export const GuardaColunas = styled.section`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  gap: 15px;
+  gap: 40px 15px;
   & > span {
     width: 2px;
     display: block;
     background-color: #00000049;
   }
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (max-width: 1180px) {
     flex-direction: column;
     justify-content: start;
     align-items: center;

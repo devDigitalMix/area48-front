@@ -1,17 +1,22 @@
 import styled from "styled-components";
 
-export const SobreContainer = styled.section``;
+export const SobreContainer = styled.section`
+  width: 100%;
+`;
 export const SobreMain = styled.div`
   display: grid;
   gap: 40px;
+  width: 100%;
 `;
 export const Historia = styled.div`
   display: grid;
   gap: 30px;
+  width: 100%;
   .img {
     display: block;
     background-color: grey;
-    width: 765px;
+    max-width: 765px;
+    width: 100%;
     height: 470px;
   }
   .historia-content {
@@ -30,20 +35,27 @@ export const SobrePilotos = styled.div`
     max-width: 590px;
   }
 
+  .title {
+    &::after {
+      background-color: transparent;
+    }
+  }
+
   .pilotosSlide {
     display: grid;
     gap: 20px;
     .slideContent {
-      display: none;
+      display: flex;
       gap: 20px;
+      justify-content: center;
       span {
-        display: block;
+        display: none;
         width: 214px;
         height: 191px;
         background-color: grey;
-      }
-      &.active {
-        display: flex;
+        &.active {
+          display: block;
+        }
       }
     }
     .slideBtns {
@@ -51,14 +63,6 @@ export const SobrePilotos = styled.div`
       justify-content: center;
       gap: 15px;
       button {
-        display: block;
-        width: 30px;
-        padding: 10px;
-        height: 2px;
-        border-bottom: 2px solid grey;
-        &.active {
-          border-bottom: 2px solid #e59c2d;
-        }
       }
     }
   }

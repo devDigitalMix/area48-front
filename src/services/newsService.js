@@ -2,8 +2,10 @@ import axios from "axios";
 
 const baseURL = "http://localhost:3000";
 
-export async function getNewsService() {
-  const response = await axios.get(`${baseURL}/news/`);
+export async function getNewsService(limit, offset) {
+  const response = await axios.get(
+    `${baseURL}/news/?limit=${limit}&offset=${offset}`
+  );
   return response;
 }
 
