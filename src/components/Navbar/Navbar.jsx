@@ -55,7 +55,7 @@ export function Navbar() {
   return (
     <>
       <NavContainer>
-        <button>
+        <button onClick={() => navigate("/")}>
           <img src="/logo.png" alt="Área 48" />
         </button>
 
@@ -95,9 +95,9 @@ export function Navbar() {
           <div className="navmenu">
             <button onClick={() => navigate("/sobre")}>Sobre</button>
             <button onClick={() => navigate("/ingressos")}>Ingressos</button>
-            <button>Inscrições</button>
+            <button onClick={() => navigate("/inscricoes")}>Inscrições</button>
             <button onClick={() => navigate("/categorias")}>Categorias</button>
-            <button>Contatos</button>
+            <button onClick={() => navigate("/contatos")}>Contatos</button>
             <button onClick={() => navigate("/novidades")}>Novidades</button>
             <button>
               <img src="/loja.svg" alt="" /> Loja

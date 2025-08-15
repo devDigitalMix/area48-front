@@ -22,6 +22,7 @@ import { Input } from "../../components/Input/Input";
 import { Label } from "../../components/Label/Label";
 import { Footer } from "../../components/Footer/Footer";
 import { ListaEventos } from "../../components/ListaEventos/ListaEventos";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Home() {
   const [banner, setBanner] = useState({});
@@ -30,6 +31,8 @@ export default function Home() {
   const [newsCarros, setNewsCarros] = useState({});
   const [modalUpdateOn, setModalUpdateOn] = useState(false);
   const [chosenNews, setChosenNews] = useState({});
+  const location = useLocation();
+  const navigate = useNavigate();
 
   // Lista de datas no formato "dd-mm-yyyy"
   const datasEventos = ["23-08-2025", "04-10-2025"];
@@ -124,8 +127,17 @@ export default function Home() {
   //   return () => clearInterval(interval);
   // }, []);
 
+  useEffect(() => {
+    if (location.hash) {
+      const elemento = document.querySelector(location.hash);
+      if (elemento) {
+        elemento.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
   return (
-    <HomeContainer>
+    <HomeContainer id="top">
       {modalUpdateOn && (
         <ModalUpdateNews onSubmit={handleUpdateNews}>
           <span
@@ -250,7 +262,9 @@ export default function Home() {
               Fique atento às redes sociais da Área 48, onde sempre{" "}
               <i>postamos o link oficial de cada evento!</i>
             </p>
-            <button className="btn">GARANTA SEU INGRESSO</button>
+            <button onClick={() => navigate("/ingressos#top")} className="btn">
+              GARANTA SEU INGRESSO
+            </button>
           </div>
           <img src="/ingressos-img.webp" />
         </div>
@@ -272,7 +286,9 @@ export default function Home() {
               Basta entrar em contato para enviar as informações necessárias.
             </p>
             <h4>PILOTO GARANTA SEU LUGAR NA PISTA</h4>
-            <button className="btn">QUERO ME INSCREVER</button>
+            <button onClick={() => navigate("/inscricoes#top")} className="btn">
+              QUERO ME INSCREVER
+            </button>
           </div>
         </div>
       </InscricoesHome>
@@ -286,7 +302,9 @@ export default function Home() {
               Desafios de arrancada para carros e motos que testam limites e
               definem o espírito competitivo. Aqui, cada segundo conta!
             </p>
-            <button className="btn">SAIBA MAIS</button>
+            <button onClick={() => navigate("/categorias#top")} className="btn">
+              SAIBA MAIS
+            </button>
           </div>
         </div>
       </CategoriasHome>

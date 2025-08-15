@@ -331,6 +331,9 @@ const SectionBase = styled.section`
         display: inline;
         font-weight: 700;
         text-decoration: underline;
+        &:hover {
+          color: var(--main);
+        }
       }
 
       i {

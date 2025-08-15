@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import { ListaEventos } from "../../components/ListaEventos/ListaEventos";
 import { GuardaColunas } from "../Home/HomeStyled";
 import {
@@ -10,62 +10,62 @@ import {
 import { Footer } from "../../components/Footer/Footer";
 
 export default function Sobre() {
-  const maxIndex = 5; // índice máximo do slide (0 a 5)
+  // const maxIndex = 5;
 
-  const [slideIndex, setSlideIndex] = useState(0);
-  const [slides, setSlides] = useState(["slide0", "slide1", "slide2"]);
+  // const [slideIndex, setSlideIndex] = useState(0);
+  // const [slides, setSlides] = useState(["slide0", "slide1", "slide2"]);
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [slidesToShow, setSlidesToShow] = useState(3);
+  // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  // const [slidesToShow, setSlidesToShow] = useState(3);
 
-  useEffect(() => {
-    // Atualiza slidesToShow com base na largura da tela
-    function handleResize() {
-      setWindowWidth(window.innerWidth);
-      if (window.innerWidth < 500) {
-        setSlidesToShow(1);
-      } else if (window.innerWidth < 730) {
-        setSlidesToShow(2);
-      } else {
-        setSlidesToShow(3);
-      }
-    }
+  // useEffect(() => {
+  //   // Atualiza slidesToShow com base na largura da tela
+  //   function handleResize() {
+  //     setWindowWidth(window.innerWidth);
+  //     if (window.innerWidth < 500) {
+  //       setSlidesToShow(1);
+  //     } else if (window.innerWidth < 730) {
+  //       setSlidesToShow(2);
+  //     } else {
+  //       setSlidesToShow(3);
+  //     }
+  //   }
 
-    window.addEventListener("resize", handleResize);
-    handleResize(); // chama na montagem para definir o valor inicial
+  //   window.addEventListener("resize", handleResize);
+  //   handleResize(); // chama na montagem para definir o valor inicial
 
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
 
-  function getSlidesFromIndex(startIndex, count) {
-    // Retorna 'count' slides a partir do startIndex, com loop
-    const result = [];
-    for (let i = 0; i < count; i++) {
-      let idx =
-        startIndex + i > maxIndex
-          ? startIndex + i - (maxIndex + 1)
-          : startIndex + i;
-      result.push(`slide${idx}`);
-    }
-    return result;
-  }
+  // function getSlidesFromIndex(startIndex, count) {
+  //   // Retorna 'count' slides a partir do startIndex, com loop
+  //   const result = [];
+  //   for (let i = 0; i < count; i++) {
+  //     let idx =
+  //       startIndex + i > maxIndex
+  //         ? startIndex + i - (maxIndex + 1)
+  //         : startIndex + i;
+  //     result.push(`slide${idx}`);
+  //   }
+  //   return result;
+  // }
 
-  function nextSlide() {
-    const nextIndex = slideIndex + 1 > maxIndex ? 0 : slideIndex + 1;
-    setSlideIndex(nextIndex);
-    setSlides(getSlidesFromIndex(nextIndex, slidesToShow));
-  }
+  // function nextSlide() {
+  //   const nextIndex = slideIndex + 1 > maxIndex ? 0 : slideIndex + 1;
+  //   setSlideIndex(nextIndex);
+  //   setSlides(getSlidesFromIndex(nextIndex, slidesToShow));
+  // }
 
-  function prevSlide() {
-    const prevIndex = slideIndex - 1 < 0 ? maxIndex : slideIndex - 1;
-    setSlideIndex(prevIndex);
-    setSlides(getSlidesFromIndex(prevIndex, slidesToShow));
-  }
+  // function prevSlide() {
+  //   const prevIndex = slideIndex - 1 < 0 ? maxIndex : slideIndex - 1;
+  //   setSlideIndex(prevIndex);
+  //   setSlides(getSlidesFromIndex(prevIndex, slidesToShow));
+  // }
 
   // Atualiza os slides se o slidesToShow mudar (ex: redimensionar a tela)
-  useEffect(() => {
-    setSlides(getSlidesFromIndex(slideIndex, slidesToShow));
-  }, [slidesToShow, slideIndex]);
+  // useEffect(() => {
+  //   setSlides(getSlidesFromIndex(slideIndex, slidesToShow));
+  // }, [slidesToShow, slideIndex]);
 
   return (
     <SobreContainer>
@@ -87,7 +87,7 @@ export default function Sobre() {
               </p>
             </div>
           </Historia>
-          <SobrePilotos>
+          {/* <SobrePilotos>
             <h3 className="title">Pilotos</h3>
             <p>
               Cerca de 100 carros participam da Área 48 e nas categorias mistas
@@ -100,7 +100,6 @@ export default function Sobre() {
                     key={i}
                     className={slides.includes(`slide${i}`) ? "active" : ""}
                   >
-                    {/* Aqui vai sua imagem depois */}
                     {`Slide ${i + 1}`}
                   </span>
                 ))}
@@ -114,7 +113,7 @@ export default function Sobre() {
                 </button>
               </div>
             </div>
-          </SobrePilotos>
+          </SobrePilotos> */}
         </SobreMain>
         <span></span>
         <ListaEventos />

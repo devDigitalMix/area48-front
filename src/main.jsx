@@ -12,6 +12,8 @@ import { Categorias } from "./pages/Categorias/Categorias.jsx";
 import Novidades from "./pages/Novidades/Novidades.jsx";
 import Noticia from "./pages/Noticia/Noticia.jsx";
 import Ingressos from "./pages/Ingressos/Ingressos.jsx";
+import Inscricoes from "./pages/Inscricoes/Inscricoes.jsx";
+import Contatos from "./pages/Contatos/Contatos.jsx";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +43,14 @@ const router = createBrowserRouter([
       {
         path: "/ingressos",
         element: <Ingressos />,
+      },
+      {
+        path: "/inscricoes",
+        element: <Inscricoes />,
+      },
+      {
+        path: "/contatos",
+        element: <Contatos />,
       },
     ],
   },

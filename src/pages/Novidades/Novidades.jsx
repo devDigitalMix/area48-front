@@ -9,6 +9,7 @@ import {
   PageButtons,
 } from "./NovidadesStyled";
 import { useNavigate } from "react-router-dom";
+import { Footer } from "../../components/Footer/Footer";
 
 export default function Novidades() {
   const [news, setNews] = useState([]);
@@ -67,70 +68,73 @@ export default function Novidades() {
   }, []);
 
   return (
-    <NovidadesContainer>
-      <GuardaColunas>
-        <NovidadesContent>
-          <h3 className="title">Novidades</h3>
-          <div className="novidades">
-            {news.map((noticia) => (
-              <div
-                className="noticia"
-                onClick={() => navigate("/noticia/" + noticia.id)}
-              >
-                <NormalNewsImage
-                  className="newsImage"
-                  imagename={noticia.imageName}
+    <>
+      <NovidadesContainer>
+        <GuardaColunas>
+          <NovidadesContent>
+            <h3 className="title">Novidades</h3>
+            <div className="novidades">
+              {news.map((noticia) => (
+                <div
+                  className="noticia"
+                  onClick={() => navigate("/noticia/" + noticia.id)}
                 >
-                  {/* <img src={noticia.imageName} alt={noticia.title} /> */}
-                  <div className="tags">
-                    {noticia.tags.map((tag) => (
-                      <h3>{tag.name}</h3>
-                    ))}
-                  </div>
-                </NormalNewsImage>
-                <div className="noticia-content">
-                  <h2>{noticia.title}</h2>
-                  <p>{noticia.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <PageButtons>
-            {lista
-              .filter(
-                (n, _, arr) =>
-                  n === 0 ||
-                  n === arr[arr.length - 1] ||
-                  (n >= pages / 4 - 2 && n <= pages / 4 + 2)
-              )
-              .reduce((acc, n, index, filtered) => {
-                const prev = filtered[index - 1];
-                if (prev !== undefined && n - prev > 1) {
-                  acc.push("...");
-                }
-                acc.push(n);
-                return acc;
-              }, [])
-              .map((n, index) =>
-                n === "..." ? (
-                  <span key={`ellipsis-${index}`} style={{ margin: "0 5px" }}>
-                    ...
-                  </span>
-                ) : (
-                  <p
-                    key={n}
-                    className={pages / 4 == n ? "active" : ""}
-                    onClick={() => getNews(4, n * 4, 1)}
+                  <NormalNewsImage
+                    className="newsImage"
+                    imagename={noticia.imageName}
                   >
-                    {n + 1}
-                  </p>
+                    {/* <img src={noticia.imageName} alt={noticia.title} /> */}
+                    <div className="tags">
+                      {noticia.tags.map((tag) => (
+                        <h3>{tag.name}</h3>
+                      ))}
+                    </div>
+                  </NormalNewsImage>
+                  <div className="noticia-content">
+                    <h2>{noticia.title}</h2>
+                    <p>{noticia.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <PageButtons>
+              {lista
+                .filter(
+                  (n, _, arr) =>
+                    n === 0 ||
+                    n === arr[arr.length - 1] ||
+                    (n >= pages / 4 - 2 && n <= pages / 4 + 2)
                 )
-              )}
-          </PageButtons>
-        </NovidadesContent>
-        <span></span>
-        <ListaEventos />
-      </GuardaColunas>
-    </NovidadesContainer>
+                .reduce((acc, n, index, filtered) => {
+                  const prev = filtered[index - 1];
+                  if (prev !== undefined && n - prev > 1) {
+                    acc.push("...");
+                  }
+                  acc.push(n);
+                  return acc;
+                }, [])
+                .map((n, index) =>
+                  n === "..." ? (
+                    <span key={`ellipsis-${index}`} style={{ margin: "0 5px" }}>
+                      ...
+                    </span>
+                  ) : (
+                    <p
+                      key={n}
+                      className={pages / 4 == n ? "active" : ""}
+                      onClick={() => getNews(4, n * 4, 1)}
+                    >
+                      {n + 1}
+                    </p>
+                  )
+                )}
+            </PageButtons>
+          </NovidadesContent>
+          <span></span>
+          <ListaEventos />
+        </GuardaColunas>
+      </NovidadesContainer>
+      <Footer />
+    </>
   );
 }

@@ -1,0 +1,78 @@
+Date : 2025-08-15 13:15:47
+Directory : c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src
+Total : 34 files,  2848 codes, 40 comments, 168 blanks, all 3056 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| JavaScript JSX |         32 |      2,797 |         40 |        156 |      2,993 |
+| JavaScript     |          2 |         51 |          0 |         12 |         63 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                      | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                         |         34 |      2,848 |         40 |        168 |      3,056 |
+| . (Files)                                                                                                                 |          3 |        314 |          2 |          7 |        323 |
+| Context                                                                                                                   |          1 |         13 |          1 |          6 |         20 |
+| components                                                                                                                |         12 |        855 |          1 |         59 |        915 |
+| components\Footer                                                                                                         |          2 |         57 |          0 |          4 |         61 |
+| components\Input                                                                                                          |          2 |         64 |          0 |          5 |         69 |
+| components\Label                                                                                                          |          2 |         10 |          0 |          4 |         14 |
+| components\ListaEventos                                                                                                   |          2 |        308 |          0 |         19 |        327 |
+| components\ListaNews                                                                                                      |          2 |        150 |          1 |          9 |        160 |
+| components\Navbar                                                                                                         |          2 |        266 |          0 |         18 |        284 |
+| pages                                                                                                                     |         16 |      1,615 |         36 |         84 |      1,735 |
+| pages\Categorias                                                                                                          |          2 |        131 |          0 |          4 |        135 |
+| pages\Contatos                                                                                                            |          2 |         65 |          0 |          4 |         69 |
+| pages\Home                                                                                                                |          2 |        660 |         26 |         32 |        718 |
+| pages\Ingressos                                                                                                           |          2 |        113 |          0 |          4 |        117 |
+| pages\Inscricoes                                                                                                          |          2 |         70 |          0 |          4 |         74 |
+| pages\Noticia                                                                                                             |          2 |        154 |          0 |         13 |        167 |
+| pages\Novidades                                                                                                           |          2 |        244 |          6 |          9 |        259 |
+| pages\Sobre                                                                                                               |          2 |        178 |          4 |         14 |        196 |
+| services                                                                                                                  |          2 |         51 |          0 |         12 |         63 |
++---------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                                                                  | language       | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\App.jsx                                        | JavaScript JSX |          5 |          0 |          2 |          7 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\Context\UserContent.jsx                        | JavaScript JSX |         13 |          1 |          6 |         20 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\GlobalStyled.jsx                               | JavaScript JSX |        247 |          0 |          2 |        249 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\components\Footer\Footer.jsx                   | JavaScript JSX |         28 |          0 |          2 |         30 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\components\Footer\FooterStyled.jsx             | JavaScript JSX |         29 |          0 |          2 |         31 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\components\Input\Input.jsx                     | JavaScript JSX |         36 |          0 |          3 |         39 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\components\Input\InputStyled.jsx               | JavaScript JSX |         28 |          0 |          2 |         30 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\components\Label\Label.jsx                     | JavaScript JSX |          4 |          0 |          2 |          6 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\components\Label\LabelStyled.jsx               | JavaScript JSX |          6 |          0 |          2 |          8 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\components\ListaEventos\ListaEventos.jsx       | JavaScript JSX |        173 |          0 |         17 |        190 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\components\ListaEventos\ListaEventosStyled.jsx | JavaScript JSX |        135 |          0 |          2 |        137 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\components\ListaNews\ListaNews.jsx             | JavaScript JSX |         69 |          1 |          7 |         77 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\components\ListaNews\ListaNewsStyled.jsx       | JavaScript JSX |         81 |          0 |          2 |         83 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\components\Navbar\Navbar.jsx                   | JavaScript JSX |         99 |          0 |         14 |        113 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\components\Navbar\NavbarStyled.jsx             | JavaScript JSX |        167 |          0 |          4 |        171 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\main.jsx                                       | JavaScript JSX |         62 |          2 |          3 |         67 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\pages\Categorias\Categorias.jsx                | JavaScript JSX |         58 |          0 |          2 |         60 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\pages\Categorias\CategoriasStyled.jsx          | JavaScript JSX |         73 |          0 |          2 |         75 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\pages\Contatos\Contatos.jsx                    | JavaScript JSX |         47 |          0 |          2 |         49 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\pages\Contatos\ContatosStyled.jsx              | JavaScript JSX |         18 |          0 |          2 |         20 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\pages\Home\Home.jsx                            | JavaScript JSX |        258 |         24 |         19 |        301 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\pages\Home\HomeStyled.jsx                      | JavaScript JSX |        402 |          2 |         13 |        417 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\pages\Ingressos\Ingressos.jsx                  | JavaScript JSX |         62 |          0 |          2 |         64 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\pages\Ingressos\IngressosStyled.jsx            | JavaScript JSX |         51 |          0 |          2 |         53 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\pages\Inscricoes\Inscricoes.jsx                | JavaScript JSX |         30 |          0 |          2 |         32 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\pages\Inscricoes\InscricoesStyled.jsx          | JavaScript JSX |         40 |          0 |          2 |         42 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\pages\Noticia\Noticia.jsx                      | JavaScript JSX |         90 |          0 |         11 |        101 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\pages\Noticia\NoticiaStyled.jsx                | JavaScript JSX |         64 |          0 |          2 |         66 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\pages\Novidades\Novidades.jsx                  | JavaScript JSX |        124 |          6 |          7 |        137 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\pages\Novidades\NovidadesStyled.jsx            | JavaScript JSX |        120 |          0 |          2 |        122 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\pages\Sobre\Sobre.jsx                          | JavaScript JSX |        110 |          4 |         12 |        126 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\pages\Sobre\SobreStyled.jsx                    | JavaScript JSX |         68 |          0 |          2 |         70 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\services\bannerService.js                      | JavaScript     |         14 |          0 |          4 |         18 |
+| c:\Users\DigitalMix3\Desktop\workspace-joao\clientes-node\area48-front\src\services\newsService.js                        | JavaScript     |         37 |          0 |          8 |         45 |
+| Total                                                                                                                     |                |      2,848 |         40 |        168 |      3,056 |
++---------------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { getNewsByIdService } from "../../services/newsService";
 import { GuardaColunas } from "../Home/HomeStyled";
 import { ListaNews } from "../../components/ListaNews/ListaNews";
+import { Footer } from "../../components/Footer/Footer";
 
 export default function Noticia() {
   const { id } = useParams();
@@ -39,62 +40,67 @@ export default function Noticia() {
   }, [id]);
 
   return (
-    <NoticiaContainer>
-      <GuardaColunas>
-        {received && news && (
-          <News>
-            <div className="newsHeader">
-              {news.tags.length > 0 && (
-                <div className="tags">
-                  {news.tags.map((tag, index) => (
-                    <h2 key={index}>{tag.name}</h2>
-                  ))}
-                </div>
-              )}
-              <h1>{news.title}</h1>
-              <p>{formatarDataIsoParaBR(news.postedDate)}</p>
-            </div>
-            <img src={news.imageName} className="newsImage" />
-            <p>{news.description}</p>
-
-            <div className="share">
-              <h4>COMPARTILHE</h4>
-              <div>
-                <a
-                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-                    currentUrl
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src="/face-share.svg" alt="facebook" />
-                </a>
-
-                <a
-                  href={`https://wa.me/?text=${encodeURIComponent(currentUrl)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src="/whats-share.svg" alt="whatsapp" />
-                </a>
-
-                <button
-                  onClick={() => copyToClipboard(currentUrl)}
-                  style={{
-                    background: "none",
-                    border: "none",
-                    cursor: "pointer",
-                  }}
-                >
-                  <img src="/copy.svg" alt="copiar" />
-                </button>
+    <>
+      <NoticiaContainer>
+        <GuardaColunas>
+          {received && news && (
+            <News>
+              <div className="newsHeader">
+                {news.tags.length > 0 && (
+                  <div className="tags">
+                    {news.tags.map((tag, index) => (
+                      <h2 key={index}>{tag.name}</h2>
+                    ))}
+                  </div>
+                )}
+                <h1>{news.title}</h1>
+                <p>{formatarDataIsoParaBR(news.postedDate)}</p>
               </div>
-            </div>
-          </News>
-        )}
-        <span></span>
-        <ListaNews />
-      </GuardaColunas>
-    </NoticiaContainer>
+              <img src={news.imageName} className="newsImage" />
+              <p>{news.description}</p>
+
+              <div className="share">
+                <h4>COMPARTILHE</h4>
+                <div>
+                  <a
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                      currentUrl
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src="/face-share.svg" alt="facebook" />
+                  </a>
+
+                  <a
+                    href={`https://wa.me/?text=${encodeURIComponent(
+                      currentUrl
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src="/whats-share.svg" alt="whatsapp" />
+                  </a>
+
+                  <button
+                    onClick={() => copyToClipboard(currentUrl)}
+                    style={{
+                      background: "none",
+                      border: "none",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <img src="/copy.svg" alt="copiar" />
+                  </button>
+                </div>
+              </div>
+            </News>
+          )}
+          <span></span>
+          <ListaNews />
+        </GuardaColunas>
+      </NoticiaContainer>
+      <Footer />
+    </>
   );
 }

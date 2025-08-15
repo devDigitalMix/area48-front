@@ -23,6 +23,9 @@ export const CategoriasContent = styled.div`
       display: inline;
       font-weight: 700;
       text-decoration: underline;
+      &:hover {
+        color: var(--main);
+      }
     }
   }
   .categorias-title {
