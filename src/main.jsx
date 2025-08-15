@@ -10,6 +10,8 @@ import UserProvider from "./Context/UserContent.jsx";
 import Sobre from "./pages/Sobre/Sobre.jsx";
 import { Categorias } from "./pages/Categorias/Categorias.jsx";
 import Novidades from "./pages/Novidades/Novidades.jsx";
+import Noticia from "./pages/Noticia/Noticia.jsx";
+import Ingressos from "./pages/Ingressos/Ingressos.jsx";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +33,14 @@ const router = createBrowserRouter([
       {
         path: "/novidades",
         element: <Novidades />,
+      },
+      {
+        path: "/noticia/:id",
+        element: <Noticia />,
+      },
+      {
+        path: "/ingressos",
+        element: <Ingressos />,
       },
     ],
   },

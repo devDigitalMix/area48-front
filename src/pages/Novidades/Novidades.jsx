@@ -8,6 +8,7 @@ import {
   NovidadesContent,
   PageButtons,
 } from "./NovidadesStyled";
+import { useNavigate } from "react-router-dom";
 
 export default function Novidades() {
   const [news, setNews] = useState([]);
@@ -19,6 +20,7 @@ export default function Novidades() {
   });
   const [lista, setLista] = useState([]);
   const [totalNews, setTotalNews] = useState(0);
+  const navigate = useNavigate();
 
   //   async function getNews() {
   //     const response = await getNewsService();
@@ -71,7 +73,10 @@ export default function Novidades() {
           <h3 className="title">Novidades</h3>
           <div className="novidades">
             {news.map((noticia) => (
-              <div className="noticia">
+              <div
+                className="noticia"
+                onClick={() => navigate("/noticia/" + noticia.id)}
+              >
                 <NormalNewsImage
                   className="newsImage"
                   imagename={noticia.imageName}

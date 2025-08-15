@@ -9,6 +9,17 @@ export async function getNewsService(limit, offset) {
   return response;
 }
 
+export async function getLatestNews() {
+  const response = await axios.get(`${baseURL}/news/latest`);
+  console.log(response);
+  return response;
+}
+
+export async function getNewsByIdService(id) {
+  const response = await axios.get(`${baseURL}/news/${id}`);
+  return response;
+}
+
 export async function createNewsService(data) {
   const response = await axios.post(`${baseURL}/news/create`, data, {
     headers: {

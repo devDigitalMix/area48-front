@@ -94,7 +94,7 @@ export function Navbar() {
         <div className="container">
           <div className="navmenu">
             <button onClick={() => navigate("/sobre")}>Sobre</button>
-            <button>Ingressos</button>
+            <button onClick={() => navigate("/ingressos")}>Ingressos</button>
             <button>Inscrições</button>
             <button onClick={() => navigate("/categorias")}>Categorias</button>
             <button>Contatos</button>

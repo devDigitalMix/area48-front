@@ -94,7 +94,6 @@ export const PageButtons = styled.div`
   margin-top: 30px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 15px;
   p {
     padding: 5px;

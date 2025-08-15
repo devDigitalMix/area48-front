@@ -4,6 +4,7 @@ export const FooterSection = styled.section`
   background: url(/footer-bg.webp) no-repeat center center;
   background-size: cover;
   padding: 80px 10px;
+  width: 100%;
   display: grid;
   justify-items: center;
   gap: 30px;
